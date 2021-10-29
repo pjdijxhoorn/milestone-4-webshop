@@ -10,13 +10,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: rosybrown;
-
-}
+.body {}
 
 /*----------Colours*/
 
@@ -25,7 +19,7 @@
 }
 
 .brown {
-    background-color: rgb(117, 65, 21);
+    background-color: rgb(77, 59, 53);
 }
 
 .white {
@@ -34,6 +28,10 @@
 
 .text-white {
     color: white;
+}
+
+.text-black {
+    color: black;
 }
 
 
@@ -47,6 +45,10 @@
 
 .nav-link {
     text-decoration: none;
+}
+
+.nav-link:hover {
+    color: black;
 }
 
 .navbar {
@@ -64,13 +66,13 @@
 
 .logo {
     font-size: 30px;
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 
 .logo:hover {
-    color: white;
+    color: black;
 }
 
 .hvr-grow:hover,
@@ -78,4 +80,29 @@
 .hvr-grow:active {
     -webkit-transform: scale(1.5);
     transform: scale(1.5);
+}
+
+
+/* --------------------------------- Media queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
 }

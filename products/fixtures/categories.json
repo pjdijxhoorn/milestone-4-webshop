@@ -1,0 +1,73 @@
+[{
+        "pk": 1,
+        "model": "products.category",
+        "fields": {
+            "name": "inside",
+            "friendly_name": "Inside Bonsai"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.category",
+        "fields": {
+            "name": "outside",
+            "friendly_name": "Outside Bonsai"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.category",
+        "fields": {
+            "name": "clearance",
+            "friendly_name": "Clearance"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.category",
+        "fields": {
+            "name": "deals",
+            "friendly_name": "Deals"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.category",
+        "fields": {
+            "name": "bonsai_seeds",
+            "friendly_name": "Bonsai Seeds"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.category",
+        "fields": {
+            "name": "pots",
+            "friendly_name": "Pots"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.category",
+        "fields": {
+            "name": "tools",
+            "friendly_name": "Tools"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.category",
+        "fields": {
+            "name": "new_arrivals",
+            "friendly_name": "New Arrivals"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.category",
+        "fields": {
+            "name": "wiring",
+            "friendly_name": "Wiring"
+        }
+    }
+]

@@ -1,0 +1,27 @@
+[{
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+        "sku": "A101",
+        "name": "Elm Bonsai",
+        "description": "This Elm bonsai in blue pot is from 1982 and is a easy to maintain inside bonsai. the leaves will change to a soft orange during the fall and will then fall off. no worries this tree will sprout new leaves in april.",
+        "price": 90,
+        "category": 1,
+        "rating": 4.6,
+        "image_url": "",
+        "image": "Afbeelding van Ilona Ilyés via Pixabay 2.jpg"
+    }
+}, {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+        "sku": "A201",
+        "name": "Blue Spruce",
+        "description": "This Blue spruce is a perfect tree to make as a focal point in your garden or balcony. it requires almost no work and will stay green year round.",
+        "price": 60,
+        "category": 2,
+        "rating": 4.6,
+        "image_url": "",
+        "image": "Afbeelding van Ilona Ilyés via Pixabay4.jpg"
+    }
+}]

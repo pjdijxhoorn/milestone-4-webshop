@@ -5,9 +5,9 @@
                 All Products <i class="fas fa-sort-down"></i>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
@@ -19,8 +19,8 @@
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
                 <a href="{% url 'products'%}?category=inside" class="dropdown-item">Inside</a>
                 <a href="{% url 'products'%}?category=outside" class="dropdown-item">outside</a>
-                <a href="{% url 'products'%}?category=bonsai" class="dropdown-item">Seeds</a>
-                <a href="{% url 'products'%}?category=inside,outside,bonsai" class="dropdown-item">All Bonsai</a>
+                <a href="{% url 'products'%}?category=seeds" class="dropdown-item">Seeds</a>
+                <a href="{% url 'products'%}?category=inside,outside,seeds" class="dropdown-item">All Bonsai</a>
             </div>
         </li>
 

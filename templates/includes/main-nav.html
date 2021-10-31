@@ -17,9 +17,10 @@
                 Bonsai <i class="fas fa-sort-down"></i>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Inside Bonsai</a>
-                <a href="" class="dropdown-item">outside Bonsai</a>
-                <a href="" class="dropdown-item">Bonsai Seeds</a>
+                <a href="{% url 'products'%}?category=inside" class="dropdown-item">Inside</a>
+                <a href="{% url 'products'%}?category=outside" class="dropdown-item">outside</a>
+                <a href="{% url 'products'%}?category=bonsai" class="dropdown-item">Seeds</a>
+                <a href="{% url 'products'%}?category=inside,outside,bonsai" class="dropdown-item">All Bonsai</a>
             </div>
         </li>
 
@@ -28,9 +29,9 @@
                 Equipment <i class="fas fa-sort-down"></i>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Pots</a>
-                <a href="" class="dropdown-item">Tools</a>
-                <a href="" class="dropdown-item">Wiring</a>
+                <a href="{% url 'products'%}?category=pots" class="dropdown-item">Pots</a>
+                <a href="{% url 'products'%}?category=tools" class="dropdown-item">Tools</a>
+                <a href="{% url 'products'%}?category=wiring" class="dropdown-item">Wiring</a>
             </div>
         </li>
 
@@ -39,10 +40,10 @@
                 Special Offers <i class="fas fa-sort-down"></i>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">New Arrivals</a>
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products'%}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products'%}?category=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'products'%}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products'%}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>

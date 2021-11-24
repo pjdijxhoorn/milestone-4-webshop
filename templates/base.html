@@ -44,7 +44,9 @@
         <div id="topnav" class="row pt-lg-2 d-none d-lg-flex glass">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link hvr-grow">
-                    <h1 class="text-center headings-font logo text-black">Happy Bonsai <i class="fas fa-seedling"></i></h1>
+                    <h1 class="text-center headings-font logo text-black">Happy Bonsai
+                        <ion-icon name="leaf-outline"></ion-icon>
+                    </h1>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -111,7 +113,7 @@
             </nav>
         </div>
         <div id="delivery-banner" class="row text-center">
-            <div class="col bg-black text-white">
+            <div class="col bg-black text-black">
                 <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
             </div>
         </div>
@@ -147,7 +149,8 @@
     </script>
     {% endblock %}
 
-
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

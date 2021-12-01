@@ -1,0 +1,22 @@
+Hello {{order.full_name }}
+
+Hereby your confirmation of your order at Happy Bonsai.
+
+Order_number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: ${{ order.order_total }}
+Delivery: ${{ order.delivery_cost }}
+Grand Total: ${{ order.grand_total }}
+
+The Items will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+When something unexpected happens we will phone you on this number: {{ order.phone_number }}.
+
+If you have aby questions feel free to contact us at {{ contact_mail }}.
+
+Thank you for your order!
+
+Sincerely,
+
+Happy Bonsai

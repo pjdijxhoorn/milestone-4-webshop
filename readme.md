@@ -145,7 +145,7 @@ The Happy Bonsai business goals are:
 
 | AS A    | I WANT TO BE ABLE TO ... | SO THAT I CAN... |
 | ----------- | ----------- | ----------- |
-| Admin |    1           |      2       |
+| Admin |    add update and delete products in the store           |      2       |
 | Admin |    1           |      2       |
 | Admin |    1           |      2       |
 | Admin |    1           |      2       |

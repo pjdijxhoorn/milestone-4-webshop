@@ -181,10 +181,14 @@ roboto was used for all the regular text
         - [Cart App Models](#cart-app-models)
 
 ## Technologies Used
-    - [Tools](#tools)
-    - [Databases](#databases)
-    - [Libraries](#libraries)
-    - [Languages](#languages)
+### Tools
+ - git/github
+ - gitpod
+ - PIP
+ - code spell checker
+### Databases
+### Libraries
+### Languages
 
 ## Testing
     - See separate [TESTING.md](TESTING.md) file.

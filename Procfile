@@ -1,0 +1,1 @@
+web: gunicorn bonsai.wsgi:application

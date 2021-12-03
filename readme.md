@@ -1,6 +1,6 @@
 # Happy Bonsai
 
-View the live website here. [link]()
+View the live website here. [link](https://happy-bonsai.herokuapp.com/)
 
 Happy Bonsai was designed, built and deployed by Paul Dijxhoorn as his final project to achieve his full-stack development diploma of Code institute. The purpose of this website is to show the acquired skills of Paul during this course. This website is designed to give users a smooth and effortless shopping experience. Specifically aimed at customers who enjoy the beauty of nature and tranquility. The website is not designed with a particular device in mind and will work well on phone tablet and pc.
 

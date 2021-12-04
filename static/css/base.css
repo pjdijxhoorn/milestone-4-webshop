@@ -160,14 +160,9 @@ body {
 }
 
 /* -------------Favourites icon */
-.favourite {
-    width: 45px;
-    height: 45px;
-    padding: 0;
-    margin: 0;
-}
 
-.favourite i {
+
+.favourite {
     color: rgb(0, 94, 0);
     font-weight: 400;
     font-size: 20px;
@@ -175,7 +170,7 @@ body {
     padding-top: 5px;
 }
 
-.after::before {
+.favourite:after::before {
     font-family: "Font Awesome 5 Free";
     content: "\f004";
     display: inline-block;

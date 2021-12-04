@@ -31,7 +31,7 @@
                 <p class="mb-0">{{ product.name }}</p>
                 <div class="favourite">
                     {% if request.user.is_authenticated %}
-                    <i class="fas fa-heart before"></i>
+                    <i class="fas fa-heart after"></i>
                     {% endif %}
                 </div>
                 <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>

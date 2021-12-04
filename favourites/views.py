@@ -6,7 +6,7 @@ def favourites(request):
 
     """ displays the products listed as favourites by the user"""
 
-    template = 'favourites/favourite'
+    template = 'favourites/favourites'
     context = {}
 
     return render(request, template, context)

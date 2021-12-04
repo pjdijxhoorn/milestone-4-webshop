@@ -88,9 +88,12 @@
                                         <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                                     </small>
                                     {% endif %}
-                                    {% if request.user.is_authenticated %}
-                                    <i class="fas fa-heart before"></i>
-                                    {% endif %}
+                                    <div class="favourite">
+                                        {% if request.user.is_authenticated %}
+                                        <i class="fas fa-heart before"></i>
+                                        {% endif %}
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

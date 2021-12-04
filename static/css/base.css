@@ -17,6 +17,7 @@ body {
 
 }
 
+
 /*---------- from Bulma */
 .icon {
     align-items: center;
@@ -156,6 +157,31 @@ body {
 .btn-black:focus {
     background: #222;
     color: white;
+}
+
+/* -------------Favourites icon */
+.favourite {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    margin: 0;
+}
+
+.favourite i {
+    color: rgb(0, 94, 0);
+    font-weight: 400;
+    font-size: 20px;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.after::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f004";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
 }
 
 /* ------------------------------- bootstrap toasts */

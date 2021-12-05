@@ -12,7 +12,7 @@ from products.models import Product
 def view_favourites(request):
     """ A view that renders the bag contents page """
 
-    return redirect(reverse)
+    return render(request, 'favourites/favourites.html')
 
 
 @login_required

@@ -28,10 +28,14 @@
         {% for item in favourites_items %}
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
             <div class="card h-100 border-0">
-                {% if product.image %}
-                <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                {% if item.product.image %}
+                <a href="{% url 'product_detail' item.product.id %}">
+                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                </a>
                 {% else %}
-                <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                <a href="{% url 'product_detail' item.product.id %}">
+                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                </a>
                 {% endif %}
                 <div class="card-body pb-0">
                     <p class="mb-0">{{ item.product.name }}</p>
@@ -40,14 +44,14 @@
                     <div class="row">
                         <div class="col">
                             <p class="lead mb-0 text-left font-weight-bold">${{ item.product.price }}</p>
-                            {% if product.category %}
+                            {% if item.product.category %}
                             <p class="small mt-1 mb-0">
 
                                 <i class="fas fa-tag mr-1"></i>{{ item.product.category.friendly_name }}
 
                             </p>
                             {% endif %}
-                            {% if product.rating %}
+                            {% if item.product.rating %}
                             <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ item.product.rating }} / 5</small>
                             {% else %}
                             <small class="text-muted">No Rating</small>

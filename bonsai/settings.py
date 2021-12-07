@@ -28,6 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 
+
 ALLOWED_HOSTS = ['happy-bonsai.herokuapp.com', 'localhost']
 
 
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'favourites',
+    'rating',
 
     # Other
     'crispy_forms',

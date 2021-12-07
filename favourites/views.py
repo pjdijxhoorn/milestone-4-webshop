@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, reverse, HttpResponse, get_object
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+
 
 from products.models import Product
 
@@ -10,7 +12,7 @@ from products.models import Product
 
 @login_required
 def view_favourites(request):
-    """ A view that renders the bag contents page """
+    """ A view that renders the favourites contents page """
 
     return render(request, 'favourites/favourites.html')
 
@@ -26,9 +28,24 @@ def add_to_favourites(request, item_id):
     request.session['favourites'] = favourites
 
     print(favourites)
-    print(request.session['favourites'])
-    return render(request, 'favourites/favourites.html')
+    
 
-# item_id in list(favourites.keys()):
-#     favourites.pop(item_id)
-#    messages.success(request, f'Removed {product.name} from your favourites')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required
+def remove_from_favourites(request, item_id):
+    """remove the product from the favourites / wishlist"""
+
+    try:
+        product = get_object_or_404(Product, pk=item_id)
+        favourites = request.session.get('favourites', {})
+
+        favourites.pop(item_id)
+        messages.success(request, f'Removed {product.name} from your favourites')
+        request.session['favourites'] = favourites
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+    except Exception as e:
+        return HttpResponse(status=500)

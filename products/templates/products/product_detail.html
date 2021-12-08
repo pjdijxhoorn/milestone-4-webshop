@@ -63,7 +63,7 @@
                 </p>
                 {% endif %}
                 {% if product.rating %}
-                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.score }} / 5</small>
+                <small class="text-muted"><i class="fas fa-star mr-1 text-warning"></i>{{ product.score }} / 5</small>
                 {% else %}
                 <small class="text-muted">No Rating</small>
                 {% endif %}
@@ -122,11 +122,16 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <h2> reviews</h2>
-            <div class="row">
-                {{ Rating_list }}
+            <div class="row p-3">
+
+                {% if rating in ratings %}
+                <p>hello</p>
+                {% endif%}
+
                 {% for rating in ratings %}
+
                 {% if rating.product_id == product.id%}
-                <div class="row review-block p-3">
+                <div class="review-block col-12">
                     <div class="col-6">
                         <h5>{{ rating.title }}</h5>
                     </div>
@@ -134,12 +139,39 @@
                     <div class="col-6">
                         <h5>{{ rating.name }}</h5>
                     </div>
-                    <small class="text-muted col-12"><i class="fas fa-star mr-1"></i>{{ rating.rating }} / 5</small>
+                    <small class="text-muted col-12">
+                        {% if rating.rating == 1 %}
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        {% elif rating.rating == 2 %}
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        {% elif rating.rating == 3 %}
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        {% elif rating.rating == 4 %}
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        {% elif rating.rating == 5 %}
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        <i class="fas fa-star mr-1 text-warning"></i>
+                        {% endif %}
+
+
+                        {{ rating.rating }} / 5
+                    </small>
                     <div class="col-12">
                         <p>{{ rating.review }}</p>
                     </div>
+
                 </div>
                 <hr>
+
                 {% endif%}
                 {% endfor %}
 

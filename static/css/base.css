@@ -127,20 +127,14 @@ body {
     padding-left: 10px;
 }
 
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
-}
-
 .btn-black {
-    background: black;
+    background: rgb(0, 94, 0);
     color: white;
 }
 
 .btn-outline-black {
     background: white;
-    color: black !important;
+    color: rgb(0, 94, 0) !important;
     /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
@@ -148,18 +142,38 @@ body {
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: black;
+    background: rgb(0, 94, 0);
     color: white !important;
+}
+
+.shop-now-button {
+    background: rgb(0, 94, 0);
+    color: white;
+    min-width: 260px;
 }
 
 .shop-now-button:hover,
 .shop-now-button:active,
-.shop-now-button:focus,
+.shop-now-button:focus {
+    background: rgb(0, 94, 0);
+    border: #000 2px solid;
+    color: white;
+}
+
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: rgb(0, 94, 0);
     color: white;
+}
+
+.product-img {
+    width: 100%;
+    height: 200px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* -------------Favourites icon */
@@ -298,7 +312,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #000;
+    background-color: rgb(0, 94, 0);
     border: 1px solid #000;
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -312,7 +326,7 @@ body {
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {
     color: #fff;
-    background-color: #222;
+    background-color: rgb(0, 94, 0);
     border-color: #222;
 }
 

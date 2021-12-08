@@ -24,7 +24,6 @@ def add_to_favourites(request, item_id):
     favourites = request.session.get('favourites', {})
 
     favourites[item_id] = 1
-    messages.success(request, f'Added {product.name} to your favourites')
     request.session['favourites'] = favourites
 
     print(favourites)
@@ -42,7 +41,6 @@ def remove_from_favourites(request, item_id):
         favourites = request.session.get('favourites', {})
 
         favourites.pop(item_id)
-        messages.success(request, f'Removed {product.name} from your favourites')
         request.session['favourites'] = favourites
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 

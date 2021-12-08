@@ -30,11 +30,11 @@
             <div class="card h-100 border-0">
                 {% if item.product.image %}
                 <a href="{% url 'product_detail' item.product.id %}">
-                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                    <img class="product-img rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                 </a>
                 {% else %}
                 <a href="{% url 'product_detail' item.product.id %}">
-                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                    <img class="product-img rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                 </a>
                 {% endif %}
                 <div class="card-body pb-0">
@@ -60,7 +60,9 @@
 
                             {% if request.user.is_authenticated %}
                             <div class="favourite">
-                                <i class="fas fa-heart favourite before"></i>
+                                <a href="">
+                                    <i class="fas fa-heart favourite after text-green"></i>
+                                </a>
                             </div>
                             {% endif %}
 

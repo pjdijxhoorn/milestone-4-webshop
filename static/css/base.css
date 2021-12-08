@@ -123,6 +123,9 @@ body {
 }
 
 /* -------------------products page */
+.review-block {
+    padding-left: 10px;
+}
 
 .shop-now-button {
     background: black;

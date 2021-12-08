@@ -1,11 +1,9 @@
 from django import forms
-from .models import Reviews
+from .models import Rating
 
 
-class ReviewForm(forms.ModelForm):
+class RatingForm(forms.ModelForm):
 
     class Meta:
-        model = Reviews
+        model = Rating
         fields = '__all__'
-
-    

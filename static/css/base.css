@@ -56,8 +56,8 @@ body {
     background:
         rgba(255, 255, 255, 0.7);
     z-index: 2;
-    display: flex;
     transition: 0.5s;
+
 }
 
 
@@ -121,6 +121,12 @@ body {
 .dropdownmenu {
     z-index: 1;
 }
+
+.extra-height {
+    height: 180px;
+}
+
+
 
 /* -------------------products page */
 .review-block {
@@ -424,4 +430,12 @@ body {
     .decrement-qty {
         padding: .25rem .5rem !important;
     }
+}
+
+/* footer */
+.footer {
+
+    height: 50px;
+    border-top: solid 2px rgb(77, 59, 53);
+    background-color: #f8f9fa;
 }

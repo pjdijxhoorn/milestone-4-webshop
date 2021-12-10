@@ -39,7 +39,16 @@
                 </a>
                 {% endif %}
                 <div class="card-body pb-0">
-                    <p class="mb-0">{{ item.product.name }}</p>
+                    <div class="row">
+                        <p class="mb-0 col-10">{{ item.product.name }}</p>
+                        {% if request.user.is_authenticated %}
+                        <div class="favourite col-1">
+                            <a href="">
+                                <i class="fas fa-heart favourite after text-green"></i>
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
                 </div>
                 <div class="card-footer bg-white pt-0 border-0 text-left">
                     <div class="row">
@@ -59,13 +68,7 @@
                             {% endif %}
 
 
-                            {% if request.user.is_authenticated %}
-                            <div class="favourite">
-                                <a href="">
-                                    <i class="fas fa-heart favourite after text-green"></i>
-                                </a>
-                            </div>
-                            {% endif %}
+
 
 
                         </div>

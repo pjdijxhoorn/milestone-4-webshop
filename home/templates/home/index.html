@@ -32,7 +32,33 @@
                 </a>
                 {% endif %}
                 <div class="card-body pb-0">
-                    <p class="mb-0">{{ product.name }}</p>
+                    <div class="row">
+                        <p class="mb-0 col-10">{{ product.name }}</p>
+                        <div class="favourite col-1">
+                            {% if request.user.is_authenticated %}
+                            {%  if product.id in favourites_list %}
+                            <div class="favourite">
+                                <a href="{% url 'add_to_favourites' product.id %}">
+                                    <i class="fas fa-heart favourite after"></i>
+                                </a>
+                            </div>
+                            {% else %}
+                            <div class="favourite">
+                                <a href="{% url 'add_to_favourites' product.id %}">
+                                    <i class="fas fa-heart favourite before"></i>
+                                </a>
+                            </div>
+                            {% endif %}
+
+                            {% else %}
+                            <div class="favourite">
+                                <a href="{% url 'account_login' %}">
+                                    <i class="fas fa-heart favourite before"></i>
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
                 <div class="card-footer bg-white pt-0 border-0 text-left">
                     <div class="row">
@@ -50,38 +76,9 @@
                             {% else %}
                             <small class="text-muted">No Rating</small>
                             {% endif %}
-                            {% if request.user.is_superuser %}
-                            <small class="ml-3">
-                                <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                            </small>
-                            {% endif %}
 
-                            <div class="favourite">
-                                {% if request.user.is_authenticated %}
 
-                                {%  if product.id in favourites_list %}
-                                <div class="favourite">
-                                    <a href="{% url 'add_to_favourites' product.id %}">
-                                        <i class="fas fa-heart favourite after"></i>
-                                    </a>
-                                </div>
-                                {% else %}
-                                <div class="favourite">
-                                    <a href="{% url 'add_to_favourites' product.id %}">
-                                        <i class="fas fa-heart favourite before"></i>
-                                    </a>
-                                </div>
-                                {% endif %}
 
-                                {% else %}
-                                <div class="favourite">
-                                    <a href="{% url 'account_login' %}">
-                                        <i class="fas fa-heart favourite before"></i>
-                                    </a>
-                                </div>
-                                {% endif %}
-                            </div>
 
 
                         </div>

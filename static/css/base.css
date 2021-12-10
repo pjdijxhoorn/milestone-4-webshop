@@ -51,6 +51,10 @@ body {
     color: black;
 }
 
+.text-green {
+    color: rgb(0, 94, 0);
+}
+
 .glass {
     background: white;
     background:

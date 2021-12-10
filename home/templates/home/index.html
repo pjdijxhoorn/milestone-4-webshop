@@ -59,17 +59,27 @@
 
                             <div class="favourite">
                                 {% if request.user.is_authenticated %}
-                                {% if product.id in favourites_list %}
 
-                                <a href="{% url 'remove_from_favourites' product.id %}">
-                                    <i class="fas fa-heart favourite after"></i>
-                                </a>
+                                {%  if product.id in favourites_list %}
+                                <div class="favourite">
+                                    <a href="{% url 'add_to_favourites' product.id %}">
+                                        <i class="fas fa-heart favourite after"></i>
+                                    </a>
+                                </div>
                                 {% else %}
-
-                                <a href="{% url 'add_to_favourites' product.id %}">
-                                    <i class="fas fa-heart favourite before"></i>
-                                </a>
+                                <div class="favourite">
+                                    <a href="{% url 'add_to_favourites' product.id %}">
+                                        <i class="fas fa-heart favourite before"></i>
+                                    </a>
+                                </div>
                                 {% endif %}
+
+                                {% else %}
+                                <div class="favourite">
+                                    <a href="{% url 'account_login' %}">
+                                        <i class="fas fa-heart favourite before"></i>
+                                    </a>
+                                </div>
                                 {% endif %}
                             </div>
 

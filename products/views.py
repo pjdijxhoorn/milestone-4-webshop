@@ -19,6 +19,8 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    user = request.user.id
+    favourites_list = []
 
     if request.GET:
         if 'sort' in request.GET:
@@ -51,11 +53,19 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    for product in products:
+        if product.favourites.filter(id=request.user.id).exists():
+            favourites_list.append(
+                product.id,
+            )
+
     context = {
+        'favourites_list': favourites_list,
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'user': user,
     }
 
     return render(request, 'products/products.html', context)
@@ -63,13 +73,16 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
+    fav = bool
     product = get_object_or_404(Product, pk=product_id)
     ratings = get_list_or_404(Rating)
+    if product.favourites.filter(id=request.user.id).exists():
+        fav = True 
     
     context = {
         'product': product,
         'ratings': ratings,
+        'fav': fav,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -92,7 +105,7 @@ def add_product(request):
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,

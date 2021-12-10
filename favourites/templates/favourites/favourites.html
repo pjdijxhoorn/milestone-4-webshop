@@ -99,23 +99,21 @@
         {% endfor %}
     </div>
 </div>
-</div>
-
-
 
 {% else %}
 <div class="row">
     <p class="lead mb-5">Your favourites list is empty.</p>
 </div>
 
-<a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-    <span class="icon">
-        <i class="fas fa-chevron-left"></i>
-    </span>
-    <span class="text-uppercase">Keep Shopping</span>
-</a>
-{% endif %}
 
+{% endif %}
+<div class="my-auto ml-5">
+    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+        <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="text-uppercase">Keep Shopping</span>
+    </a>
 </div>
 {% endblock %}
 

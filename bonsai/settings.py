@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'h+%7tpmpdp*&tj%m+d^@75a^2wya0ahtks+839ctfiq9ajs+!^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['happy-bonsai.herokuapp.com', 'localhost']

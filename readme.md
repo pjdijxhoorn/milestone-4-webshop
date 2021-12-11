@@ -53,7 +53,7 @@ Happy Bonsai was designed, built and deployed by Paul Dijxhoorn as his final pro
 
 5. [Testing](#testing)
     - See separate [TESTING.md](TESTING.md) file.
-    - [known bugs](#known-bugs)
+    
 
 6. [Deployment](#deployment)
     - [How to run this project locally](#how-to-run-this-project-locally)

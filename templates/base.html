@@ -125,7 +125,11 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
-
+        <div id="delivery-banner border border-warning border-2 rounded" class="row text-right">
+            <div class="col bg-black text-black">
+                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
+            </div>
+        </div>
     </header>
 
     {% if messages %}
@@ -152,11 +156,6 @@
     {% block content %}
     {% endblock %}
     <div class="py-3">
-        <div id="delivery-banner border-danger" class="row text-center">
-            <div class="col bg-black text-black">
-                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
-            </div>
-        </div>
 
     </div>
     <footer class="footer">

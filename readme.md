@@ -46,12 +46,14 @@ Happy Bonsai was designed, built and deployed by Paul Dijxhoorn as his final pro
 
 4. [Technologies Used](#technologies-used)
     - [Tools](#tools)
+    - [Frameworks](#Frameworks)
     - [Databases](#databases)
     - [Libraries](#libraries)
     - [Languages](#languages)
 
 5. [Testing](#testing)
     - See separate [TESTING.md](TESTING.md) file.
+    - [known bugs](#known-bugs)
 
 6. [Deployment](#deployment)
     - [How to run this project locally](#how-to-run-this-project-locally)
@@ -173,6 +175,31 @@ buttons grow  on hover over.
 
 
 ## Features
+
+### Elements on every Page
+
+- The navigation bar  is responsive for phone and ipad users. When seen on the phone or ipad it shows a hamburger menu with all the same options as on a computer. The buttons are interactive for computer. When hovered over the links show conformation by slightly growing.
+- On all the devices you can see and use the search function on whatever page you are.
+
+### Home Page
+-   The Home page has the 4 newest products displayed for users that come more frequently.
+-   Beneath that there is a call to action/ shop button
+
+### Products Page
+-   
+### Search Page
+### product Detail Page
+### favourites page
+### Register Page
+### Login Page
+### Profile Page
+### Log out Page
+### bag Page
+### Checkout
+### future features
+    - See the amount of favourites that you have in the favourites icon at the top nav bar.
+    - If there are no reviews there should be text saying: write the first review.
+    - Connect the individual review score to the product rating
     
 
 ## Information Architecture
@@ -185,16 +212,29 @@ buttons grow  on hover over.
 
 ## Technologies Used
 ### Tools
- - git/github
- - gitpod
+ - Git/github
+ - Gitpod
  - PIP
- - code spell checker
+ - Code spell checker
+
+### framework
 ### Databases
+- Heroku postgres
 ### Libraries
+- bootstrap
 ### Languages
+-   HTML5
+-   CSS3
+-   Javascript
+-   Python
 
 ## Testing
     - See separate [TESTING.md](TESTING.md) file.
+
+### known-bugs
+    - When using the link forgot password  some users got no email send.
+    - When removing or adding a favourite you are not returned to the same spot on the website.
+    -
 
 ## Deployment
     - [How to run this project locally](#how-to-run-this-project-locally)
@@ -213,6 +253,8 @@ the content of the website is entirely fictional.
 
 
 ### reflection
+
+
 
 ## Contact
 

@@ -43,7 +43,7 @@
                         <p class="mb-0 col-10">{{ item.product.name }}</p>
                         {% if request.user.is_authenticated %}
                         <div class="favourite col-1">
-                            <a href="">
+                            <a href="{% url 'add_to_favourites' product.id %}">
                                 <i class="fas fa-heart favourite after text-green"></i>
                             </a>
                         </div>
@@ -116,9 +116,6 @@
     </a>
 </div>
 
-<script src="/static/js/tilt.js"></script>
-<script src="static/js/tilt.js"></script>
-<script src="/workspace/milestone-4-webshop/static/js/tilt.js"></script>
 {% endblock %}
 
 {% block postloadjs %}

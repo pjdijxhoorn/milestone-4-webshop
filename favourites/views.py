@@ -38,3 +38,4 @@ def add_to_favourites(request, item_id):
         product.favourites.add(request.user)
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    

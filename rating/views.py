@@ -17,10 +17,13 @@ def rating(request, product_id):
 
     if request.method == 'POST':
         if form.is_valid():
-
+            
             form.save()
             messages.success(request, 'Thank you! Your review has been added.')
-            return redirect(reverse('rating'))
+            
+            redirct_url = request.GET.get("next", url_for("favorites"))      
+            return HttpResponseRedirect(redirect_url)
+
         else:
             messages.error(request, 'review cannot be added, please \
                             recheck the form.')

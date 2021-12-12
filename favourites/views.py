@@ -12,9 +12,8 @@ from products.models import Product
 def view_favourites(request):
     """ A view that renders the favourites contents page """
 
-    user = request.user.id
+    
     products = Product.objects.all()
-    favourite = Product.favourites
     favourites_list = []
     
     for product in products:

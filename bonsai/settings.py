@@ -87,7 +87,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
-                'favourites.contexts.favourites_contents',
 
             ],
             'builtins': [

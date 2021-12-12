@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .forms import RatingForm
 
 # Create your views here.
 
 
+@login_required
 def rating(request):
     """ A view to show the product rating/ review form  """
 

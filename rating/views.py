@@ -8,17 +8,18 @@ from .forms import RatingForm
 
 
 @login_required
-def rating(request):
+def rating(request, product_id):
     """ A view to show the product rating/ review form  """
-    
-    if request.method == 'POST':
-        
-        form = RatingForm(request.POST)
-        form.instance.name = request.user.username
-        if form.is_valid():
-            
+    form = RatingForm(request.POST)
+    form.instance.name = request.user.username
+    form.instance.product = product_id.name
 
-            Rating = form.save()
+    if request.method == 'POST':
+
+        
+        if form.is_valid():
+
+            form.save()
             messages.success(request, 'Thank you! Your review has been added.')
             return redirect(reverse('rating'))
         else:

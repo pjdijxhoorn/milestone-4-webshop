@@ -21,7 +21,7 @@ def rating(request):
         if form.is_valid():
             
 
-            Rating.save()
+            form.save()
             messages.success(request, 'Thank you! Your review has been added.')
             return redirect(reverse('rating'))
         else:

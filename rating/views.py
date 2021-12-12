@@ -11,7 +11,7 @@ from .forms import RatingForm
 def rating(request):
     """ A view to show the product rating/ review form  """
     form = RatingForm(request.POST)
-    form.instance.name = request.user.username
+    form.instance.name = "paul Dijxhoorn "
 
     if request.method == 'POST':
 

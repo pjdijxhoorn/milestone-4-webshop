@@ -11,7 +11,7 @@ def rating(request):
     """ A view to show the product rating/ review form  """
     form = RatingForm(request.POST)
     form.instance.name = request.user.username
-    form.instance.product = ""
+    
 
 
     if request.method == 'POST':

@@ -13,7 +13,7 @@
 body {
     background: url('/media/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: 100%;
 
 }
 
@@ -439,10 +439,10 @@ body {
 /* footer */
 .footer {
 
-    height: 50px;
+    height: 30px;
     border-top: solid 2px black;
     background-color: rgb(77, 59, 53);
     position: fixed;
-    bottom: 50px;
+    bottom: 0px;
     width: 100%;
 }

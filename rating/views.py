@@ -10,10 +10,11 @@ from .forms import RatingForm
 @login_required
 def rating(request):
     """ A view to show the product rating/ review form  """
-
+    
     if request.method == 'POST':
-        form.instance.name = self.request.user.username
+        
         form = RatingForm(request.POST)
+        form.instance.name = request.user.username
         if form.is_valid():
             
 

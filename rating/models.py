@@ -2,6 +2,7 @@ from django.db import models
 from products.models import Product
 from django.db.models import IntegerField, Model
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.contrib.auth.models import User
 
 
 # Create your models here.

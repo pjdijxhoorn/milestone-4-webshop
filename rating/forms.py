@@ -7,7 +7,10 @@ class RatingForm(forms.ModelForm):
 
     class Meta:
         model = Rating
-        fields = '__all__'
+        fields = ('title', 'rating', 'review', 'product')
+        
 
-    
+    widgets = {
+        'product': forms.HiddenInput(),
+    }
         

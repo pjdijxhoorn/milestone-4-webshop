@@ -14,11 +14,14 @@ def rating(request):
     form.instance.name = "paul Dijxhoorn "
 
     if request.method == 'POST':
-
-        
+        user = request.user.username
+        print(user)
+        print(User)
+        RatingForm.name = User.username
         if form.is_valid():
+            
 
-            form.save()
+            RatingForm.save()
             messages.success(request, 'Thank you! Your review has been added.')
             return redirect(reverse('rating'))
         else:

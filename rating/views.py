@@ -7,13 +7,11 @@ from .forms import RatingForm
 
 
 @login_required
-def rating(request):
+def rating(request, product_id):
     """ A view to show the product rating/ review form  """
     form = RatingForm(request.POST)
     form.instance.name = request.user.username
-    
-
-
+    form.instance.product = product_id.name
     if request.method == 'POST':
         if form.is_valid():
 

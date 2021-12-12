@@ -11,10 +11,11 @@ from .forms import RatingForm
 def rating(request):
     """ A view to show the product rating/ review form  """
     form = RatingForm(request.POST)
-    form.instance.name = "paul Dijxhoorn "
+    form.instance.name = request.user.username
+    form.instance.product = " Elm bonsai"
+    
 
     if request.method == 'POST':
-        user = request.user.username
         print(user)
         print(User)
         RatingForm.name = User.username

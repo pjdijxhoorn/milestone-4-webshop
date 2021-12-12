@@ -12,21 +12,19 @@ from products.models import Product
 def view_favourites(request):
     """ A view that renders the favourites contents page """
 
-    
     products = Product.objects.all()
     favourites_list = []
-    
+
     for product in products:
         if product.favourites.filter(id=request.user.id).exists():
-            print(product.name)
             favourites_list.append({
                 'product': product,
             })
 
     context = {
-        'favourites_list': favourites_list, 
+        'favourites_list': favourites_list,
         }
-    
+
     return render(request, 'favourites/favourites.html', context)
 
 
@@ -36,9 +34,7 @@ def add_to_favourites(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     if product.favourites.filter(id=request.user.id).exists():
         product.favourites.remove(request.user)
-    else:    
+    else:
         product.favourites.add(request.user)
-      
+
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-

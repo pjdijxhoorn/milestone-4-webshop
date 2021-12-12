@@ -21,7 +21,7 @@ def rating(request, product_id):
             form.save()
             messages.success(request, 'Thank you! Your review has been added.')
             
-            redirct_url = request.GET.get("next", url_for("favorites"))      
+            redirct_url = request.GET.get("next", url_for("home"))      
             return HttpResponseRedirect(redirect_url)
 
         else:

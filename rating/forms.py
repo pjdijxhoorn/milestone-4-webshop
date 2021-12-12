@@ -3,6 +3,7 @@ from .models import Rating
 from django.contrib.auth.models import User
 
 
+
 class RatingForm(forms.ModelForm):
 
     class Meta:

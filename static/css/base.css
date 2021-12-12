@@ -442,5 +442,6 @@ body {
     height: 50px;
     border-top: solid 2px black;
     background-color: rgb(77, 59, 53);
-
+    position: absolute;
+    bottom: 0;
 }

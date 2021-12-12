@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import RatingForm
@@ -12,15 +11,11 @@ def rating(request):
     """ A view to show the product rating/ review form  """
     form = RatingForm(request.POST)
     form.instance.name = request.user.username
-    form.instance.product = " Elm bonsai"
-    
+    form.instance.product = ""
+
 
     if request.method == 'POST':
-        print(user)
-        print(User)
-        RatingForm.name = User.username
         if form.is_valid():
-            
 
             form.save()
             messages.success(request, 'Thank you! Your review has been added.')

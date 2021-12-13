@@ -22,6 +22,7 @@ def rating(request, product_id):
         ratingform = RatingForm(rating_form_data)
         if ratingform.is_valid:
             rating = ratingform.save(commit=False)
+            
             rating.user = request.user
             rating.product = product
 

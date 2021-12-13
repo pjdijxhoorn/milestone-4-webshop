@@ -9,6 +9,7 @@ class RatingAdmin(admin.ModelAdmin):
         'user',
         'title',
         'rating',
+        'review',
     )
 
 

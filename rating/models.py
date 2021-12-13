@@ -16,5 +16,5 @@ class Rating(models.Model):
     review = models.TextField()
 
     def __str__(self):
-        return self.product
+        return self.product.name
 

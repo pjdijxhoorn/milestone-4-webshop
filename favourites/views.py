@@ -40,7 +40,7 @@ def add_to_favourites(request, item_id):
 
     return HttpResponseRedirect(url)
 
-def remove_from_favourites(request, item_id):
+def remove_from_favourites(request, product_id):
     """remove the favourite from the favourites page"""
     product = get_object_or_404(Product, pk=item_id)
     product.favourites.remove(request.user)

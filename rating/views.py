@@ -11,7 +11,7 @@ from products.models import Product
 def rating(request, product_id):
     """ A view to show the product rating/ review form  """
     
-    product_obj = Products.objects.get(pk=product_id)
+    product_obj = get_object_or_404(Product, pk=product_id)
     url = request.META.get('HTTP_REFERER')
     
     if request.method == 'POST':

@@ -13,6 +13,7 @@ def rating(request, product_id):
     form = RatingForm(request.POST)
     form.instance.name = request.user.username
     product = get_object_or_404(Product, pk=product_id)
+    form.instance.product = product.name
 
     if request.method == 'POST':
         if form.is_valid():

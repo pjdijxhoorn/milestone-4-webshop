@@ -12,7 +12,7 @@ def rating(request, product_id):
     """ A view to show the product rating/ review form  """
     
     product = get_object_or_404(Product, pk=product_id)
-    url = request.META.get('HTTP_REFERER')
+    
     
     if request.method == 'POST':
         rating_form_data = {
@@ -27,7 +27,7 @@ def rating(request, product_id):
 
             ratingform.save()
             messages.success(request, 'Thank you! Your review has been added.')
-            return HttpResponseRedirect(url)
+            return redirect('product_detail', product.id)
         else:
             messages.error(request, 'review cannot be added, please \
                             recheck the form.')

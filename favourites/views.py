@@ -37,5 +37,10 @@ def add_to_favourites(request, item_id):
         product.favourites.remove(request.user)
     else:
         product.favourites.add(request.user)
+    
+    next = request.GET.get("next", "True")
+    if next = True:
+        template = 'favourites.html'
+        return render(request, template, context)
 
     return HttpResponseRedirect(url)

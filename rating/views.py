@@ -10,17 +10,18 @@ from products.models import Product
 @login_required
 def rating(request, product_id):
     """ A view to show the product rating/ review form  """
-    
+    product_obj = Products.objects.get(pk=product_id)
+    url = request.META.get('HTTP_REFERER')
     if request.method == 'POST':
-        rating_form = RatingForm(rating_form_data)
-        if rating_form.is_valid:
-            rating = rating_form.save(commit=false)
+        form = RatingForm()
+        if form.is_valid:
+            rating = form.save(commit=false)
             rating.user = request.user
-            review.product = product_obj
+            rating.product = product_obj
 
-            rating.save()
+            form.save()
             messages.success(request, 'Thank you! Your review has been added.')
-            return redirect(reverse('rating'))
+            return HttpResponseRedirect(url)
         else:
             messages.error(request, 'review cannot be added, please \
                             recheck the form.')

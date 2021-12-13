@@ -23,7 +23,6 @@ Happy Bonsai was designed, built and deployed by Paul Dijxhoorn as his final pro
         - [Elements on every Page](#elements-on-every-page)
         - [Home Page](#home-page)
         - [Shop Page](#ashop-page)
-        - [Search Page](#search-page)
         - [Listing Detail Page](#listing-detail-page)
         - [About Page](#about-page)
         - [Frequently Asked Questions Page](#frequently-asked-questions-page)
@@ -92,9 +91,6 @@ The Happy Bonsai webshop is a amazing way to meet these needs because:
 - The lay out and navigation of Happy Bonsai are build upon the conventions of well laid out shops.  
 - The products have clear photo's and the information about the products is easy to find.
 
-
-
-
 #### Business Goals
 The Happy Bonsai business goals are:
 - To give of a professional, trustworthy and safe feeling to users so that they can buy products without doubt.
@@ -107,57 +103,57 @@ The Happy Bonsai business goals are:
 
 | AS A    | I WANT TO BE ABLE TO ... | SO THAT I CAN... |
 | ----------- | ----------- | ----------- |
-| Site User |    View list of purchasable products       |      2       |
-| Site User |   View details of products         |      2       |
-| Site User |    Quickly find deals and special offers         |      2       |
-| Site User |     See the total of my purchases while shopping        |      2       |
+| Site User |   View list of purchasable products           |      See what choices i have       |
+| Site User |   View details of products                    |      see if the products are what I am looking for       |
+| Site User |   Quickly find deals and special offers       |      Get all the best deals       |
+| Site User |   See the total of my purchases while shopping|     Cant get surprised of the cost       |
 <br/>
 - Registration and User Accounts
 
 | AS A    | I WANT TO BE ABLE TO ... | SO THAT I CAN... |
 | ----------- | ----------- | ----------- |
-| Site User |    Quickly and easily register     |      2       |
-| Site User |    Quickly login in and out           |      2       |
-| Site User |    Easily Recover password        |      2       |
-| Site User |    See a Record of bought products           |      2       |
+| Site User |    Quickly and easily register        |      use all the extra functionality       |
+| Site User |    Quickly login in and out           |      use all the functions i want and close my account       |
+| Site User |    Easily Recover password            |      recover my password when lost       |
+| Site User |    See a Record of bought products    |      see the cost and products I ordered       |
 <br/>
 
 - Sorting and searching
 
 | AS A    | I WANT TO BE ABLE TO ... | SO THAT I CAN... |
 | ----------- | ----------- | ----------- |
-| Site User |    Sort list of items          |      2       |
-| Site User |   Sort specific items        |      2       |
-| Site User |   Sort categories         |      2       |
-| Site User |   Search by name or description        |      2       |
-| Site User |   Get a good display what I have searched|      2       |
-| Site User | Being able to make a list of items that i like (favourites)|      2       |
+| Site User |    Sort list of items                      |      See the specific product I am looking for quicker       |
+| Site User |   Sort specific items                      |        See the specific product I am looking for quicker     |
+| Site User |   Sort categories                          |      See the specific product I am looking for quicker       |
+| Site User |   Search by name or description            |      See the specific product I am looking for quicker       |
+| Site User |   Get a good display what I have searched  |      See the specific product I am looking for quicker       |
+| Site User | Being able to make a list of items that i like (favourites)|      buy products on a later moment and i dont have to look for them.       |
 <br/>
 
 - Shopping cart, Purchasing and Checkout
 
 | AS A    | I WANT TO BE ABLE TO ... | SO THAT I CAN... |
 | ----------- | ----------- | ----------- |
-| Site User |    View items in my cart          |      2       |
-| Site User |   Adjust my bag         |      2       |
-| Site User |    Enter my payment info  |      2       |
-| Site User |   Safely and securely use personal payment info      |      2       |
+| Site User |    View items in my cart          |      See that my order is right and i can see the prices       |
+| Site User |   Adjust my bag         |      Adjust when i am not happy with the current bag       |
+| Site User |    Enter my payment info  |      Pay and get my products       |
+| Site User |   Safely and securely use personal payment info      |      So i will not be stolen from or hacked       |
 <br/>
 - Admin
 
 | AS A    | I WANT TO BE ABLE TO ... | SO THAT I CAN... |
 | ----------- | ----------- | ----------- |
-| Admin |    add update and delete products in the store           |      2       |
-| Admin |    1           |      2       |
-| Admin |    1           |      2       |
-| Admin |    1           |      2       |
+| Admin |    add update and delete products in the store            |      Change and evolve my store       |
+| Admin |    Add categories                                         |       Expand products sold       |
+| Admin |    manage orders                                          |       Know products to send and where      |
+| Admin |    manage profiles and reviews                            |      Help my customers when the lose account info       |
 <br/>
 
 ### Design Choices
 #### color scheme
 ![The used colors with their codes]()
 
-The color test - [View pdf]()
+The color test -
 
 The color test was done [here](https://contrastchecker.com/)
 
@@ -186,10 +182,20 @@ buttons grow  on hover over.
 -   Beneath that there is a call to action/ shop button
 
 ### Products Page
--   
-### Search Page
+-   The product page has all the products. which can be sorted in several ways.(price,rating,name or category)
+-   The product cards link to detail pages which give more detailed info about the products. the cards are kept small so you can oversee as much products as possible.
+-   When logged in you can see green favourites buttons you can toggel these to add the product to your favourites list.
+
 ### product Detail Page
+-   The product detail page displays just one product but now the image is bigger and a description is visible.
+-   underneath the description there is a input and 2 buttons to specify how many of the product you want to add. Beneath that there is a button to keep shopping or to add the product to your bag.
+- Under the image there is a review/ rating field where you can see the reviews/ ratings or add them. If you are not logged in you will be send to login first.
+- in the top you can see a favourites button again
+
 ### favourites page
+- This page displays all the products you added to your wishlist/ favourites. When clicking the green favourite button you remove that product from your favourites.
+- When clicking on one of the products you will be send to the product_detail page of that product.
+
 ### Register Page
 ### Login Page
 ### Profile Page
@@ -249,11 +255,13 @@ buttons grow  on hover over.
 ### disclaimer
 
 This website is created for educational purpose only. 
-the content of the website is entirely fictional.
+the content of the website is entirely fictional. 
 
 
 ### reflection
 
+I really love coding however I sadly couldn't enjoy this project as much as I would have like due to time constrains.
+Because of that I couldn't really style the website or add all the features that I would have liked. This led that was constantly trying to rush to get everything rolled out and making way more rash decisions that cost me more time on the long run and made the project sloppier then it had to be. And on top of that I feel like I learned less then with the previous projects. A lesson to be learned here.  
 
 
 ## Contact

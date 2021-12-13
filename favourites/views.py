@@ -37,5 +37,6 @@ def add_to_favourites(request, item_id):
     else:
         product.favourites.add(request.user)
 
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    redirct_url = request.GET.get("next", reverse(" products "))
     
+    return HttpResponseRedirect(redirect_url)

@@ -47,6 +47,7 @@ def remove_from_favourites(request, item_id):
 
     context = {
         'favourites_list': favourites_list,
+        'product': product,
         }
 
     return render(request, 'favourites/favourites.html', context)

@@ -31,12 +31,11 @@ def view_favourites(request):
 @login_required
 def add_to_favourites(request, item_id):
     """add products to favourites/ wishlist"""
+    url = request.META.get('HTTP_REFERER')
     product = get_object_or_404(Product, pk=item_id)
     if product.favourites.filter(id=request.user.id).exists():
         product.favourites.remove(request.user)
     else:
         product.favourites.add(request.user)
 
-    redirct_url = request.GET.get("next", reverse("products"))
-    
-    return HttpResponseRedirect(redirect_url)
+    return HttpResponseRedirect(url)

@@ -11,7 +11,7 @@ from products.models import Product
 def rating(request, product_id):
     """ A view to show the product rating/ review form  """
     
-    product_obj = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, pk=product_id)
     url = request.META.get('HTTP_REFERER')
     
     if request.method == 'POST':
@@ -23,7 +23,7 @@ def rating(request, product_id):
         if ratingform.is_valid:
             rating = ratingform.save(commit=false)
             rating.user = request.user
-            rating.product = product_obj
+            rating.product = product
 
             ratingform.save()
             messages.success(request, 'Thank you! Your review has been added.')
@@ -36,5 +36,6 @@ def rating(request, product_id):
         template = 'rating/rating.html'
         context = {
             'form': form,
+            'product': product,
         }
         return render(request, template, context)

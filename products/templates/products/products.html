@@ -71,13 +71,13 @@
                                     {% if request.user.is_authenticated %}
                                     {%  if product.id in favourites_list %}
                                     <div class="favourite">
-                                        <a href="{% url 'add_to_favourites' product.id %}?next={{ all_products }}">
+                                        <a href="{% url 'add_to_favourites' product.id %}?next={{ products }}">
                                             <i class="fas fa-heart favourite after"></i>
                                         </a>
                                     </div>
                                     {% else %}
                                     <div class="favourite">
-                                        <a href="{% url 'add_to_favourites' product.id %}?next={{ all_products }}">
+                                        <a href="{% url 'add_to_favourites' product.id %}?next={{ products }}">
                                             <i class="fas fa-heart favourite before"></i>
                                         </a>
                                     </div>

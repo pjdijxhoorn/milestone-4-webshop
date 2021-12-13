@@ -18,11 +18,11 @@ def rating(request, product_id):
         rating_form_data = {
             'review': request.POST['review'],
             'rating': request.POST['rating'],
+            'title': request.POST['title'],
         }
         ratingform = RatingForm(rating_form_data)
         if ratingform.is_valid:
             rating = ratingform.save(commit=False)
-            
             rating.user = request.user
             rating.product = product
 

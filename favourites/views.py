@@ -30,17 +30,24 @@ def view_favourites(request):
 
 @login_required
 def add_to_favourites(request, item_id):
-    """add products to favourites/ wishlist"""
+    """toggle products to favourites/ wishlist"""
     url = request.META.get('HTTP_REFERER')
     product = get_object_or_404(Product, pk=item_id)
     if product.favourites.filter(id=request.user.id).exists():
         product.favourites.remove(request.user)
     else:
         product.favourites.add(request.user)
-    
-    next = request.GET.get("next", "True")
-    if next = True:
-        template = 'favourites.html'
-        return render(request, template, context)
 
     return HttpResponseRedirect(url)
+
+def remove_from_favourites(request, item_id):
+    """remove the favourite from the favourites page"""
+    product = get_object_or_404(Product, pk=item_id)
+    product.favourites.remove(request.user)
+
+    context = {
+        'product': product,
+        'favourites_list': favourites_list,
+    }
+    return render(request, 'favourites/favourites.html', context)
+

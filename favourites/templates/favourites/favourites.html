@@ -43,7 +43,7 @@
                         <p class="mb-0 col-10">{{ item.product.name }}</p>
                         {% if request.user.is_authenticated %}
                         <div class="favourite col-1">
-                            <a href="{% url 'add_to_favourites' product.id %}?next={{True}}">
+                            <a href="{% url 'remove_from_favourites' product.id %}">
                                 <i class="fas fa-heart favourite after text-green"></i>
                             </a>
                         </div>

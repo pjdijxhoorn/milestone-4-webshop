@@ -8,10 +8,11 @@ from products.models import Product
 
 
 @login_required
-def rating(request):
+def rating(request, product_id):
     """ A view to show the product rating/ review form  """
     form = RatingForm(request.POST)
     form.instance.name = request.user.username
+    product = get_object_or_404(Product, pk=product_id)
 
     if request.method == 'POST':
         if form.is_valid():

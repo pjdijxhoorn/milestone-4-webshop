@@ -75,7 +75,7 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
     fav = bool
     product = get_object_or_404(Product, pk=product_id)
-    ratings = Rating.objects.filter(product_id=product_id)
+    ratings = get_list_or_404(Rating)
     if product.favourites.filter(id=request.user.id).exists():
         fav = True
 

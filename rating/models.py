@@ -12,9 +12,9 @@ class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=254, null=True, blank=True)
     rating = models.IntegerField(default=5, validators=[MaxValueValidator(5),
-            MinValueValidator(1)] )
+                MinValueValidator(1)])
     review = models.TextField()
 
     def __str__(self):
-        return self.user.username
+        return self.user
 

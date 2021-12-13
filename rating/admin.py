@@ -6,8 +6,9 @@ from .models import Rating
 class RatingAdmin(admin.ModelAdmin):
     list_display = (
         'product',
-        'name',
+        'user',
         'title',
+        'rating',
     )
 
 

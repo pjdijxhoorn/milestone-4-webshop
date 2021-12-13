@@ -45,5 +45,4 @@ def remove_from_favourites(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     product.favourites.remove(request.user)
 
-    return redirect(reverse('favourites'))
-
+    return HttpResponseRedirect(view_favourites)

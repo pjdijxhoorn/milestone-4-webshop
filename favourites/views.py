@@ -43,11 +43,19 @@ def add_to_favourites(request, item_id):
 def remove_from_favourites(request, item_id):
     """remove the favourite from the favourites page"""
     product = get_object_or_404(Product, pk=item_id)
-    product.favourites.remove(request.user)
+    if product.favourites.filter(id=request.user.id).exists():
+        product.favourites.remove(request.user)
+    products = Product.objects.all()
+    favourites_list = []
+
+    for product in products:
+        if product.favourites.filter(id=request.user.id).exists():
+            favourites_list.append({
+                'product': product,
+            })
 
     context = {
         'favourites_list': favourites_list,
-        'product': product,
         }
 
     return render(request, 'favourites/favourites.html', context)

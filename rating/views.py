@@ -10,15 +10,15 @@ from products.models import Product
 @login_required
 def rating(request, product_id):
     """ A view to show the product rating/ review form  """
-    form = RatingForm(request.POST)
-    form.instance.name = request.user.username
-    product = get_object_or_404(Product, pk=product_id)
-    form.instance.product = product.name
-
+    
     if request.method == 'POST':
-        if form.is_valid():
+        rating_form = RatingForm(rating_form_data)
+        if rating_form.is_valid:
+            rating = rating_form.save(commit=false)
+            rating.user = request.user
+            review.product = product_obj
 
-            form.save()
+            rating.save()
             messages.success(request, 'Thank you! Your review has been added.')
             return redirect(reverse('rating'))
         else:

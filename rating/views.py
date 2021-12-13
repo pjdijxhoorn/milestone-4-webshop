@@ -33,8 +33,8 @@ def rating(request, product_id):
                             recheck the form.')
     else:
         form = RatingForm()
-    template = 'rating/rating.html'
-    context = {
-        'form': form,
-    }
-    return render(request, template, context)
+        template = 'rating/rating.html'
+        context = {
+            'form': form,
+        }
+        return render(request, template, context)

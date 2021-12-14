@@ -10,18 +10,12 @@ def index(request):
     products = Product.objects.all().order_by('-id')[:4]
     favourites_list = []
 
-    try:
-        user = request.user.id
+    for product in products:
+        if product.favourites.filter(id=request.user.id).exists():
+            favourites_list.append(product.id,)
 
-        for product in products:
-            if product.favourites.filter(id=request.user.id).exists():
-                favourites_list.append(
-                    product.id,
-                    )
-    except:
-        print("error")
-    context = {
-        'products': products,
-        'favourites_list': favourites_list,
-    }
+        context = {
+                    'products': products,
+                    'favourites_list': favourites_list,
+                    }
     return render(request, 'home/index.html', context)

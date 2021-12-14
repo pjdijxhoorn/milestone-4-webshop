@@ -4,7 +4,7 @@ View the live website here. [link](https://happy-bonsai.herokuapp.com/)
 
 Happy Bonsai was designed, built and deployed by Paul Dijxhoorn as his final project to achieve his full-stack development diploma of Code institute. The purpose of this website is to show the acquired skills of Paul during this course. This website is designed to give users a smooth and effortless shopping experience. Specifically aimed at customers who enjoy the beauty of nature and tranquility. The website is not designed with a particular device in mind and will work well on phone tablet and pc.
 
-![A image that shows how the website looks on different devices.]()
+![A image that shows how the website looks on different devices.](media/mainphoto.png)
 
 ## Table of contents
 1. [UX](#ux)
@@ -148,24 +148,33 @@ The Happy Bonsai business goals are:
 <br/>
 
 ### Design Choices
-#### color scheme
-![The used colors with their codes]()
 
-The color test -
+buttons grow on hover over to signify the growth of the bonsai.
+
+#### color scheme
+
+During this project i used green, brown, black, and white. Green and brown are natural colors. This is good for a website for bonsai trees. brown is associated with earth and green is often associated with leafs. White is used for the background for its neutral and clean. The color codes used can be seen in the image below. 
+
+The color test:
+
+![color test.](media/colors.png)
+
 
 The color test was done [here](https://contrastchecker.com/)
 
 #### Typography
         
-MedievalSharp was used for the logo text
-roboto was used for all the regular text
+MedievalSharp was used for the logo text to give it a eastern look. the place where bonsai came from are china though japan popularized it. The font reminds me of the japanse pagoda's. 
+![elements on all pages.](media/medievalsharp.png)
 
-![font.]()
+Roboto was used for all the regular text because this is a very readable and clean font.
+![elements on all pages.](media/roboto.png)
+
 #### imagery
 
 ### Wireframes
 
-buttons grow  on hover over.
+
 
 
 ## Features
@@ -286,8 +295,64 @@ buttons grow  on hover over.
 ![logo bug.](media/logobug.png)
 
 ## Deployment
-    - [How to run this project locally](#how-to-run-this-project-locally)
-    - [Heroku Deployment](#heroku-deployment)
+
+### How to run this project locally
+
+
+
+
+
+
+### Heroku Deployment
+
+To deploy this website/ app to Heroku use the next steps:
+
+1. Create a `requirements.txt ` in your terminal by the command `pip freeze > requirements.txt`.
+2. create a `procfile` with the terminal command `echo web: python app.py > Procfile`.
+3. Add commit and push with the following commands
+```
+git add -A
+```
+```
+git commit -m " "
+```
+```
+git push
+```
+4. Sign up or log in to your account on Heroku.
+5. Create a new app with a unused name.
+6. Set the region to be the closest one to you.
+7. When you created the app go to the 'Settings' tab and click 'Reveal Config Variables' and input the following values.
+
+| Key | Value |
+--- | ---
+AWS_ACCESS_KEY_ID | `<your secret key>`
+AWS_SECRET_ACCESS_KEY | `<your secret key>`
+DATABASE_URL | `<your postgres database url>`
+EMAIL_HOST_PASS | `<your secret key>`
+EMAIL_HOST_USER | `<your heroku app hostname>`
+STRIPE_PUBLIC_KEY | `<your secret key>`
+STRIPE_SCRET_KEY | `<stripe secret key>`
+STRIPE_WH_KEY | `<Stripe wh secret key>`
+USE_AWS | `<True>`
+
+Note: I replaced several values with a placeholder for security reasons.
+
+8. From the command line of your local IDE:
+    - Enter the heroku postres shell 
+    - Migrate the database models 
+    - Create your superuser account in your new database
+
+9. In your heroku dashboard, click "Deploy". Scroll down to "Manual Deploy", select the master branch then click "Deploy Branch".
+
+
+10. Scroll down to the deploy button and click
+'enable automatic deployment'.
+
+11. Click view app and enjoy your project.
+
+12. From the link provided add `/admin` to the end of the url, log in with your superuser account and create a rating of a product within the new database.
+
 
 ## Credits
 ### Content

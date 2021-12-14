@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import RatingForm
@@ -10,10 +10,9 @@ from products.models import Product
 @login_required
 def rating(request, product_id):
     """ A view to show the product rating/ review form  """
-    
+
     product = get_object_or_404(Product, pk=product_id)
-    
-    
+
     if request.method == 'POST':
         rating_form_data = {
             'review': request.POST['review'],

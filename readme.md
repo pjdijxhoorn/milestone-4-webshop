@@ -391,14 +391,6 @@ The  languages used are :
 ## Testing
 - See separate [TESTING.md](TESTING.md) file.
 
-### known-bugs
-- When using the link forgot password  some users got no email send. *fixed*
-- When removing or adding a favourite you are not returned to the same spot on the website.
-- When registering with a @live mail sometimes the conformation mail will not get trough.
-- on certain parts of the site the logo icon doesnt seem to load 
-
-![logo bug.](media/logobug.png)
-
 ## Deployment
 
 ### How to run this project locally

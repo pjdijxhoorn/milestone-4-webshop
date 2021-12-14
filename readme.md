@@ -39,7 +39,9 @@ Happy Bonsai was designed, built and deployed by Paul Dijxhoorn as his final pro
     - [Data Models](#data-models)
         - [User](#user)
         - [Products App Model](#products-app-model)
-        - [Cart App Models](#cart-app-models)
+        - [Checkout App Models](#checkout-models)
+        - [User profile model](#user-profile-model)
+        - [Rating model](#rating-model)
 
 4. [Technologies Used](#technologies-used)
     - [Tools](#tools)
@@ -259,32 +261,135 @@ Roboto was used for all the regular text because this is a very readable and cle
 
 ## Information Architecture
 
-    - [Database choice](#database-choice)
-    - [Data Models](#data-models)
-        - [User](#user)
-        - [Products App Model](#products-app-model)
-        - [Cart App Models](#cart-app-models)
+### Database choice
+- Django uses SQL databases for its framework. For deployment I used the database provided by heroku which is a PostgresSQL database.
+-   The database used during development locally was sqlite3 within django. 
+
+
+### Data Models
+#### User
+
+    django.contrib.auth.models was the model that is used for the user.
+
+#### Products App Model
+
+- Within the products app there are 2 models the category model and the products model
+
+**category model**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Name | name      |    max_length=254    | CharField
+Friendly_name| friendly_name| max_length=254, null=True, blank=True| CharField|
+
+**Product model**
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Category | category      |'Category', null=True, blank=True, on_delete=models.SET_NULL| ForeignKey from categories
+Sku| sku | max_length=254, null=True, blank=True| CharField|
+Name|name |max_length=254 |CharField |
+Description|description | | TextField|
+Price| price| max_digits=6, decimal_places=2| DecimalField|
+Score| score | default=5, validators=[MaxValueValidator(5), MinValueValidator(1)]| IntegerField|
+Image_url|image_url |max_length=1024, null=True, blank=True |URLField |
+Image |image  | null=True, blank=True| ImageField|
+Favourites|favourites |User, related_name='favourite', default=None, blank=True |ManyToManyField |
+
+
+#### Checkout Models
+
+**Order**
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+order_number|order_number| max_length=32, null=False, editable=False|CharField|
+User_profile| user_profile| UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'|ForeignKey to user profile|
+Full_name| full_name| max_length=50, null=False, blank=False|CharField|
+Email| email| max_length=254, null=False, blank=False|EmailField|
+Phone_number|phone_number|max_length=20, null=False, blank=False|CharField|
+country|country|blank_label='Country *', null=False, blank=False|CountryField|
+Postcode| postcode|max_length=20, null=True, blank=True|CharField|
+Town_or_city| town_or_city|max_length=40, null=False, blank=False|CharField|
+Street_address1|street_address1|max_length=80, null=False, blank=False|CharField|
+Street_address2|street_address2|max_length=80, null=False, blank=True|CharField|
+County| county|max_length=80, null=True, blank=True|CharField|
+Date| date|auto_now_add=True|DateTimeField|
+Delivery_cost| delivery_cost|max_digits=6, decimal_places=2, null=False, default=0|DecimalField|
+Order_total|order_total|max_digits=10, decimal_places=2, null=False, default=0|DecimalField|
+Grand_total| grand_total|max_digits=10, decimal_places=2, null=False, default=0|DecimalField|
+Original_bag|original_bag|null=False, blank=False, default=''|TextField|
+Stripe_pid| stripe_pid| max_length=254, null=False, blank=False, default=''|CharField|
+
+
+
+**OrderLineItem**
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Order|order |null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems'|ForeignKey to order|
+Product|product|Product, null=False, blank=False, on_delete=models.CASCADE|ForeignKey to product|
+quantity|quantity|null=False, blank=False, default=0|IntegerField|
+lineitem_total| lineitem_total|max_digits=6, decimal_places=2, null=False, blank=False, editable=False|DecimalField|
+
+
+#### User profile model
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+User| user|User, on_delete=models.CASCADE|OneToOneField|
+default_phone_number|default_phone_number| max_length=20, null=True, blank=True|CharField|Default_street_address1|   default_street_address1| max_length=80, null=True, blank=True|CharField|Default_street_address2|   default_street_address2|max_length=80, null=True, blank=True|CharField|
+Default_town_or_city|default_town_or_city|max_length=40, null=True, blank=True|CharField|
+Default_county| default_county|max_length=80, null=True, blank=True|CharField|
+Default_postcode | default_postcode | max_length=20, null=True, blank=True|CharField|
+Default_country|default_country|blank_label='Country', null=True, blank=True|CountryField|
+
+
+#### Rating model
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Product|  product|  Product, null=False, blank=False, on_delete=models.CASCADE|ForeignKey from product|
+User|user| User, null=False, blank=False, on_delete=models.CASCADE|ForeignKey from user|
+Title|title|max_length=254, null=True, blank=True|.CharField|
+Rating|rating|default=5, validators=[MaxValueValidator(5),
+                MinValueValidator(1)|IntegerField|
+Review| review||TextField|
+
+
 
 ## Technologies Used
 ### Tools
- - Git/github
- - Gitpod
- - PIP
- - Code spell checker
+ - Git/github to handle version control and store my code.
+ - Gitpod was used as my IDE
+ - PIP for installing tools needed in the project
+ - Code spell checker 
+ - django crispy forms for the styling of the django forms
+ - gunicorn to aid the development of the heroku deployment
+ - pillow for processing image files to the database
+ - psycog2 for adaptor of PostgreSQL  
+ - Stripe for the payment system
+ - boto3 the managment of AWS S3
+- AWS S3 bucket to store the images from the database
+
 
 ### framework
 ### Databases
+Database used are:
 - Heroku postgres
+- SQlite3
 ### Libraries
+The libraries used where:
 - bootstrap
-### Languages
+- jquery
+- fontawesome
+- google fonts
+- ionicons
+
+### Languages 
+The  languages used are :
 -   HTML5
 -   CSS3
 -   Javascript
 -   Python
 
 ## Testing
-    - See separate [TESTING.md](TESTING.md) file.
+- See separate [TESTING.md](TESTING.md) file.
 
 ### known-bugs
 - When using the link forgot password  some users got no email send. *fixed*

@@ -28,13 +28,11 @@ Happy Bonsai was designed, built and deployed by Paul Dijxhoorn as his final pro
         - [Frequently Asked Questions Page](#frequently-asked-questions-page)
         - [Contact Page](#contact-page)
         - [Register Page](#register-page)
-        - [Login Page](#login-page)
+        - [Login and out Pages](#Login-and-logout-Pages)
         - [Account Page](#account-page)
-        - [Log out Page](#log-out-page)
-        - [Cart Page](#cart-page)
+        - [bag Page](#bag-page)
         - [Checkout](#checkout)
-        - [Terms and Conditions / Privacy Policy pages](#terms-and-conditions-privacy-policy-pages)
-    - [Features for Future Releases](#features-for-future-releases)
+    - [future features](#future-features)
 
 3. [Information Architecture](#information-architecture)
     - [Database choice](#database-choice)
@@ -177,14 +175,24 @@ buttons grow  on hover over.
 - The navigation bar  is responsive for phone and ipad users. When seen on the phone or ipad it shows a hamburger menu with all the same options as on a computer. The buttons are interactive for computer. When hovered over the links show conformation by slightly growing.
 - On all the devices you can see and use the search function on whatever page you are.
 
+![elements on all pages.](media/navigationbar.png)
+
 ### Home Page
 -   The Home page has the 4 newest products displayed for users that come more frequently.
 -   Beneath that there is a call to action/ shop button
+
+![home page.](media/homepage.png)
+
+
 
 ### Products Page
 -   The product page has all the products. which can be sorted in several ways.(price,rating,name or category)
 -   The product cards link to detail pages which give more detailed info about the products. the cards are kept small so you can oversee as much products as possible.
 -   When logged in you can see green favourites buttons you can toggel these to add the product to your favourites list.
+
+![products page.](media/productspage.png)
+
+
 
 ### product Detail Page
 -   The product detail page displays just one product but now the image is bigger and a description is visible.
@@ -192,21 +200,53 @@ buttons grow  on hover over.
 - Under the image there is a review/ rating field where you can see the reviews/ ratings or add them. If you are not logged in you will be send to login first.
 - in the top you can see a favourites button again
 
+![products detail page.](media/product_detailpage.png)
+
+
 ### favourites page
 - This page displays all the products you added to your wishlist/ favourites. When clicking the green favourite button you remove that product from your favourites.
 - When clicking on one of the products you will be send to the product_detail page of that product.
 
+![favourites page.](media/favouritespage.png)
+
+
 ### Register Page
-### Login Page
+- The register page has a form to register. after you will be asked to confirm your account via mail.
+
+![register page.](media/registerpage.png)
+
+### Login and logout Pages
+- The login page has a form to log in after being logged in you will be redirected to the home screen. There are some screens to require a user to be logged in. If they then log in thew will be redirected there. After login out you will be directed to the home screen as well.
+
+![login page.](media/loginpage.png)
+
 ### Profile Page
-### Log out Page
+- On the profile page you can see your order history and personal details which you can update in the same screen.
+- When you click on an order you get to see all the details of that order again
+
+![profile page.](media/profilepage.png)
+
 ### bag Page
+- The bag page has all the products added to the bag displayed with the option to adjust the amount or remove the product entirely.
+- Underneath buttons to keep shopping or go to the checkout.
+
+![bag page.](media/bagpage.png)
+
 ### Checkout
+- On the checkout page you can see a summary of your order. And a form for all the personal details if you are logged in it will auto fill all the details already given in your profile.
+
+![checkout page.](media/checkoutpage.png)
+
+- After buying your products you will get a conformation with the order numbers and all the other important information.
+
+![confromation.](media/checkoutconformation.png)
+
+
 ### future features
-    - See the amount of favourites that you have in the favourites icon at the top nav bar.
-    - If there are no reviews there should be text saying: write the first review.
-    - Connect the individual review score to the product rating
-    
+- See the amount of favourites that you have in the favourites icon at the top nav bar.
+- If there are no reviews there should be text saying: write the first review.
+- Connect the individual review score to the product rating
+- See the amount of reviews a product has. and if there are a lot then a hide/show function so the page will not get to big.    
 
 ## Information Architecture
 
@@ -238,30 +278,61 @@ buttons grow  on hover over.
     - See separate [TESTING.md](TESTING.md) file.
 
 ### known-bugs
-    - When using the link forgot password  some users got no email send.
-    - When removing or adding a favourite you are not returned to the same spot on the website.
-    -
+- When using the link forgot password  some users got no email send. *fixed*
+- When removing or adding a favourite you are not returned to the same spot on the website.
+- When registering with a @live mail sometimes the conformation mail will not get trough.
+- on certain parts of the site the logo icon doesnt seem to load 
+
+![logo bug.](media/logobug.png)
 
 ## Deployment
     - [How to run this project locally](#how-to-run-this-project-locally)
     - [Heroku Deployment](#heroku-deployment)
 
 ## Credits
-    - [Content](#content)
-    - [Images](#images)
-    - [Code](#code)
-    - [Acknowledgements](#acknowledgements)
+### Content
+- All the content was written by myself except from ratings and reviews which can be written by anyone and the ones populating the website are from family and friends.
+### Images
+- All the images not from myself have the name and site in their title. All these images  were free to use and where from these websites: 
+    -   https://www.pexels.com/nl-nl/
+    -   https://unsplash.com/
+    -   https://www.stockvault.net/
+    -   https://pixabay.com/
+    -   https://picjumbo.com/
+    -   https://www.freeimages.com/nl/
+    -   https://pikwizard.com/
+    -   https://stocksnap.io/
+    -   https://www.rawpixel.com/
+
+### Code
+- Due the fact that I didn't have a lot of time for this last project and my confidence in my django skills where not high I based most of my code on the mini project Boutique Ado. Except for the two apps favourites and ratings.
+- when working on the rating app I got some solutions from the project of fatima from student support from her project spice ur look
+- For the code of the favourites app I used some solutions from https://www.youtube.com/watch?v=H4QPHLmsZMU learn django from the youtube channel Very Academy.
+
+### Acknowledgements
+I would like to thank: 
+- My current mentor Sandeep Aggarwal for his support and help with the project.
+- The people of student support for all their help and in particular Johann. He really helped me a lot In the second to last day when I was completely stressed out and didn't think I was able to reach the deadline anymore
+- My partner and parents for their support during the complete course.
+- My mentor for the first 3 projects Anna Villanueva she was really inspiring and went above and beyond to help me grow.
+
 
 ### disclaimer
 
-This website is created for educational purpose only. 
+-   This website is created for educational purpose only. 
 the content of the website is entirely fictional. 
 
 
 ### reflection
 
-I really love coding however I sadly couldn't enjoy this project as much as I would have like due to time constrains.
-Because of that I couldn't really style the website or add all the features that I would have liked. This led that was constantly trying to rush to get everything rolled out and making way more rash decisions that cost me more time on the long run and made the project sloppier then it had to be. And on top of that I feel like I learned less then with the previous projects. A lesson to be learned here.  
+-   I really love coding however I sadly couldn't enjoy this project as much as I would have like due to time constrains.
+My main focus was getting all the functions to work which took up way more time the anticipated.
+Because of that I couldn't really style the website or add all the features that I would have liked. This led that was constantly trying to rush to get everything rolled out and making way more rash decisions that cost me more time on the long run and made the project sloppier then it had to be. 
+
+-   The favourites function is set up in a bad way. It should have been in its own model now. Because of this the site is more clunky and when adding products on the site or via the admin you get a favourites input with every product.
+
+-   After completing this project if released that i still have a lot to learn and that the speed of my coding is still to slow.
+This mainly due my lack of knowledge of the working of django and the correct syntax of code. After I am done with this project I will be starting some projects of my own to hone my skills. 
 
 
 ## Contact

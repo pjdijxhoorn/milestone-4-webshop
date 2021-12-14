@@ -404,7 +404,51 @@ The  languages used are :
 ### How to run this project locally
 
 
+1. make sure you have a IDE to work from where you have PIP Python3 and Git installed.
+2. make accounts to Stripe, AWS, and set up a S3 bucket
+3. Sign in to github and go the main page of this repository [link](https://github.com/pjdijxhoorn/milestone-4-webshop).
+4. Above the files click the button for Code.
+5. Copy the link under the HTTPS tab.
+6. open your code editor.
+7. Open a new work directory, or an existing one where you want the directory to be created.
+8. In the command line write git clone, and after that paste the URL you from Step 5 and hit enter.
 
+        git clone https://https://github.com/pjdijxhoorn/milestone-4-webshop
+
+9. Install all the needed modules with  
+
+        pip -r requirements.txt.
+
+10. Set up environment variable in your selected IDE, or you can create .env file in your root directory and add .env to .gitignore file, and add the followings to the .env file.
+
+        import os  
+        os.environ["DEVELOPMENT"] = "True"    
+        os.environ["SECRET_KEY"] = "<Your Secret Key>"
+        os.environ["STRIPE_PUBLIC_KEY"] = "<Your Stripe Public Key>"    
+        os.environ["STRIPE_SECRET_KEY"] = "<Your Stripe Secret Key>"    
+        os.environ["STRIPE_WH_SECRET"] = "<Your Stripe WH Secret Key>"    
+
+11. Migrate the models to create  your database template with the following commands in the terminal.
+
+        python3 manage.py makemigrations
+
+         python3 manage.py migrate
+
+
+12. load the data fixtures with the command
+
+        python3 manage.py loaddata <fixture_name>
+
+
+13. Create a superuser to acces the django admin panel and database. After that follow the steps for username, password and email. 
+
+        python3 manage.py createsuperuser
+
+14. Run your program locally with this command.
+
+        python3 manage.py runserver
+
+15. Once the program is running, go to the local link provided and add /admin to the end of the url. Here log in with your superuser account and create instances category, products, rating after this the website should run as expected
 
 
 

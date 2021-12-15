@@ -176,7 +176,7 @@ Roboto was used for all the regular text because this is a very readable and cle
 
 ### Wireframes
 
-
+![View.](media/wireframes-happy-bonsai.pdf)
 
 
 ## Features

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
+from django.db.models import Q, Avg
 from django.db.models.functions import Lower
 
 from .models import Product, Category
@@ -81,11 +81,14 @@ def product_detail(request, product_id):
     ratings = Rating.objects.filter(product_id=product_id)
     if product.favourites.filter(id=request.user.id).exists():
         fav = True
+    score = Rating.objects.filter(product_id=product_id).aggregate(Avg('rating'))
+    
 
     context = {
         'product': product,
         'ratings': ratings,
         'fav': fav,
+        'score': score,
     }
 
     return render(request, 'products/product_detail.html', context)
